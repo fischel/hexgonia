@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>hexagonia</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="title" content="hexagonia">
+    <meta name="description" content="hexagonia">
+    <link rel="stylesheet" type="text/css" href="css/base.css" media="screen" />
+    <script type="text/javascript" src="js/hexagon.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/sound.js"></script>
+    <script type="text/javascript" src="js/level.js"></script>
+</head>
+<body>
+<div id="content">
+    <div id="game">
+        <div id="toolbar">
+            <div id="nav">
+                <div>
+                    <button id="btnStart">New game</button><br />
+                    Player: <input id="radioeasy" type="radio" name="mode" navalue="easy" checked /> easy <input id="radiohard" type="radio" name="mode" value="hard" /> hard
+                </div>
+                <div>
+                    <img id="title" src="images/title.png" width="200" />
+                </div>
+                <div>
+                    <button id="btnReplay" disabled>Replay sound</button><br />
+                    Volume: <input id="elemSlider" type="range" min="0" max="10" step="1" />
+                </div>
+            </div>
+        </div>
+        <embed src="hexagon.svg" width="300" height="300" type="image/svg+xml" name="hexgon"></embed>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
