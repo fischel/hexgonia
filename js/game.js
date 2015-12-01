@@ -40,7 +40,6 @@ hexagon.createGame = function() {
         // play sound
         var index = game.map[evt.target.id];
         game.sound.playNote(index);
-        // console.log('play: ' + index);
 
         if (game.melody == null) {
             return;
@@ -52,14 +51,14 @@ hexagon.createGame = function() {
         if (game.compare()) {
             if (game.keys.length == game.melody.data.length) {
                 game.sound.playSuccess();
-                game.elementGame.className = 'gameyeah';
+                game.elementGame.className = 'game backyeah';
                 game.elementReplay.disabled = true;
             } else {
-                game.elementGame.className = '';
+                game.elementGame.className = 'game back';
             }
         } else {
             game.sound.playFail();
-            game.elementGame.className = 'gamefail';
+            game.elementGame.className = 'game backfail';
             game.keys = [];
         }
     };
@@ -90,47 +89,48 @@ hexagon.createGame = function() {
     };
 
     game.loopAngle = function() {
-        var elem = hexagon.svg.getElementById('rot');
+        var elem = document.getElementById('rot');
         elem.setAttributeNS(null, 'transform', 'rotate(' + game.angle + ')');
     };
 
     game.replay = function() {
-        console.log('replay');
         if (game.melody) {
             game.sound.playMelody(game.melody);
             game.keys = [];
-            game.elementGame.className = '';
+            game.elementGame.className = 'game back';
         }
     };
 
     game.startGame = function() {
-        console.log('startgame');
         game.keys = [];
         game.melody = game.sound.randomMelody();
-        console.log(game.melody.data);
+
+        // debug melody
+        //console.log(game.melody.data);
+
         game.sound.playMelody(game.melody);
         game.elementReplay.disabled = false;
-        game.elementGame.className = '';
+        game.elementGame.className = 'game back';
     };
 
     game.sound = hexagon.createSound();
 
-    var elem = hexagon.svg.getElementById('svg1');
+    var elem = document.getElementById('svg1');
     elem.addEventListener('click', game.click, false);
 
-    elem = hexagon.svg.getElementById('svg2');
+    elem = document.getElementById('svg2');
     elem.addEventListener('click', game.click, false);
 
-    elem = hexagon.svg.getElementById('svg3');
+    elem = document.getElementById('svg3');
     elem.addEventListener('click', game.click, false);
 
-    elem = hexagon.svg.getElementById('svg4');
+    elem = document.getElementById('svg4');
     elem.addEventListener('click', game.click, false);
 
-    elem = hexagon.svg.getElementById('svg5');
+    elem = document.getElementById('svg5');
     elem.addEventListener('click', game.click, false);
 
-    elem = hexagon.svg.getElementById('svg6');
+    elem = document.getElementById('svg6');
     elem.addEventListener('click', game.click, false);
 
     return game;

@@ -8,32 +8,56 @@
     <meta name="title" content="hexagonia">
     <meta name="description" content="hexagonia">
     <link rel="stylesheet" type="text/css" href="css/base.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/desktop.css" media="screen and (min-width: 640px)" />
     <script type="text/javascript" src="js/hexagon.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
     <script type="text/javascript" src="js/sound.js"></script>
     <script type="text/javascript" src="js/level.js"></script>
 </head>
 <body>
-<div id="content">
-    <div id="game">
-        <div id="toolbar">
-            <div id="nav">
-                <div>
-                    <button id="btnStart">New game</button><br />
-                    Player: <input id="radioeasy" type="radio" name="mode" navalue="easy" checked /> easy <input id="radiohard" type="radio" name="mode" value="hard" /> hard
-                </div>
-                <div>
-                    <img id="title" src="images/title.png" width="200" />
-                </div>
-                <div>
-                    <button id="btnReplay" disabled>Replay sound</button><br />
-                    Volume: <input id="elemSlider" type="range" min="0" max="10" step="1" />
-                </div>
-            </div>
-        </div>
-        <embed src="hexagon.svg" width="300" height="300" type="image/svg+xml" name="hexgon"></embed>
+
+<div class="flex">
+    <div>
+        <button id="btnStart">New game</button><br />
+        Player: <input id="radioeasy" type="radio" name="mode" navalue="easy" checked /> easy <input id="radiohard" type="radio" name="mode" value="hard" /> hard
+    </div>
+    <div><img id="title" src="images/title.png" width="100%" /></div>
+    <div>
+        <button id="btnReplay" disabled>Replay sound</button><br />
+        Volume: <input id="elemSlider" type="range" min="0" max="10" step="1" />
     </div>
 </div>
+
+<div class="game back" id="idgame">
+    <div style="flex: 3;"></div>
+    <div style="flex: 2;" class="gamesvg">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" width="100%" height="100%" preserveAspectRatio="xMinYMin meet">
+            <defs>
+                <style type="text/css">
+                    .triangle:hover { cursor: pointer; fill: white; }
+                </style>
+            </defs>
+            <g id="hexbase" transform="scale(1.5),translate(100,100)">
+                <g id="rot" transform="rotate(0)">
+                    <g transform="translate(-100,-100)">
+                        <polygon id="svg1" class="triangle" points="100,100 100,0 186,50" fill="blue" stroke="black" stroke-width="2"/>
+                        <polygon id="svg2" class="triangle" points="100,100 186,50 186,150" fill="cyan" stroke="black" stroke-width="2"/>
+                        <polygon id="svg3" class="triangle" points="100,100 186,150 100,200" fill="limegreen" stroke="black" stroke-width="2"/>
+                        <polygon id="svg4" class="triangle" points="100,100 100,200 14,150" fill="yellow" stroke="black" stroke-width="2"/>
+                        <polygon id="svg5" class="triangle" points="100,100 14,150 14,50" fill="orange" stroke="black" stroke-width="2"/>
+                        <polygon id="svg6" class="triangle" points="100,100 14,50 100,0" fill="red" stroke="black" stroke-width="2"/>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </div>
+    <div style="flex: 3;"></div>
+</div>
+
+<div>
+    created by Gisbert, Greta, Sarah &amp; Stephan
+</div>
+
 </body>
 </html>
 

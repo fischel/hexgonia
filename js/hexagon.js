@@ -24,7 +24,7 @@ window.onload = function() {
     elem = document.getElementById('radiohard');
     elem.onclick = g.changemode;
 
-    elem = document.getElementById('game');
+    elem = document.getElementById('idgame');
     g.elementGame = elem;
 
     requestAnimationFrame(g.loop);
