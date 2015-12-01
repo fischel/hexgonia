@@ -55,19 +55,41 @@ input[type="range"] {
 /* game */
 
 .flex {
-    display: flex;
-    height: 100px;
+    display: -webkit-flex;
+    display:         flex;
+    -webkit-flex-flow: row;
+    flex-flow: row;
 }
 
 .flex div {
-    flex: 1;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-order: 1;
+    order: 1;
 }
 
 .game {
     background-size: cover;
-    display: flex;
+    display: -webkit-flex;
+    display:         flex;
+    -webkit-flex-flow: row;
+    flex-flow: row;
     width: 100vw;
     height: 50vw;
+}
+
+.flex2 {
+    -webkit-flex: 2;
+    flex: 2;
+    -webkit-order: 1;
+    order: 1;
+}
+
+.flex3 {
+    -webkit-flex: 3;
+    flex: 3;
+    -webkit-order: 1;
+    order: 1;
 }
 
 .back {
@@ -82,6 +104,6 @@ input[type="range"] {
     background-image: url(../images/fail2048.png) !important;
 }
 
-.gamesvg {
-    margin-top: 10vw;
+#gamesvg {
+    padding-top: 9vw;
 }
