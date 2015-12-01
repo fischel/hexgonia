@@ -4,5 +4,5 @@ hexagonia is a simple game where you have to repeat notes in the right order. It
 
 http://www.berlinminijam.de/
 
-Try it: http://hexagonia.fischel.org
+Try it: http://hexagonia.pixelactivity.de
 
